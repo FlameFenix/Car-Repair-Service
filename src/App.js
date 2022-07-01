@@ -9,11 +9,13 @@ import Fact from './components/Fact/Fact';
 import Services from './components/services/Services';
 import Booking from './components/booking/Booking';
 import Footer from './components/footer/Footer';
+import { Timer } from './components/Timer/Timer';
 
 function App() {
   return (
     <div className="App">
 
+      <Timer />
       <Spinner />
       <Topbar />
       <Navbar />

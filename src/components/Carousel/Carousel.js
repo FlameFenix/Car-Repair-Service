@@ -9,9 +9,9 @@ function Carousel() {
                     <div className="container">
                       <div className="row align-items-center justify-content-center justify-content-lg-start">
                         <div className="col-10 col-lg-7 text-center text-lg-start">
-                          <h6 className="text-white text-uppercase mb-3 animated slideInDown"> Car Servicing </h6>
-                          <h1 className="display-3 text-white mb-4 pb-3 animated slideInDown">Qualified Car Repair Service Center</h1>
-                          <a href="index.html" className="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i className="fa fa-arrow-right ms-3"></i></a>
+                          <h6 className="text-white text-uppercase mb-3 animated slideInDown">Обслужване на автомобили</h6>
+                          <h1 className="display-3 text-white mb-4 pb-3 animated slideInDown">Качествено облужване за вашия автомобил</h1>
+                          <a href="index.html" className="btn btn-primary py-3 px-5 animated slideInDown">Прочети повече<i className="fa fa-arrow-right ms-3"></i></a>
                         </div>
                         <div className="col-lg-5 d-none d-lg-flex animated zoomIn">
                           <img className="img-fluid" src="img/carousel-1.png" alt={""} />
