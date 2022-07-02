@@ -2,9 +2,7 @@ import React from 'react';
 
 export const Timer = (props) => {
     let [time, setTime] = React.useState(0);
-
-    console.log('render');
-
+    
     setTimeout(() => {
         setTime(time + 1);
     }, 1000);

@@ -6,7 +6,7 @@ function Services() {
                     <h6 className="text-primary text-uppercase"> Our Services </h6>
                     <h1 className="mb-5">Explore Our Services</h1>
                 </div>
-                <div className="row g-4 wow fadeInUp" data-wow-delay="0.3s" style={{visibility: "hidden", animationDelay: "0.3s", animationName: "none"}}>
+                <div className="row g-4 wow fadeInUp" data-wow-delay="0.3s" style={{visibility: "hidden", animationDelay: "0.3s", animationName: "fadeInUp"}}>
                     <div className="col-lg-4">
                         <div className="nav w-100 nav-pills me-4">
                             <button className="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
@@ -33,7 +33,7 @@ function Services() {
                                 <div className="row g-4">
                                     <div className="col-md-6" style={{minHeight: "350px"}}>
                                         <div className="position-relative h-100">
-                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg" style={{objectFit: "cover"}} alt="" />
+                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg" style={{objectFit: "cover", transform: "translate(-50%, 0)"}} alt="" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
@@ -50,7 +50,7 @@ function Services() {
                                 <div className="row g-4">
                                     <div className="col-md-6" style={{minHeight: "350px"}}>
                                         <div className="position-relative h-100">
-                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg" style={{objectFit: "cover"}} alt="" />
+                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg" style={{objectFit: "cover", transform: "translate(-50%, 0)"}} alt="" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
@@ -67,7 +67,7 @@ function Services() {
                                 <div className="row g-4">
                                     <div className="col-md-6" style={{minHeight: "350px"}}>
                                         <div className="position-relative h-100">
-                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg" style={{objectFit: "cover"}} alt="" />
+                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg" style={{objectFit: "cover", transform: "translate(-50%, 0)"}} alt="" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
@@ -84,7 +84,7 @@ function Services() {
                                 <div className="row g-4">
                                     <div className="col-md-6" style={{minHeight: "350px"}}>
                                         <div className="position-relative h-100">
-                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg" style={{objectFit: "cover"}} alt="" />
+                                            <img className="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg" style={{objectFit: "cover", transform: "translate(-50%, 0)"}} alt="" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
