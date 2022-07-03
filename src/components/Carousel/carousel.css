@@ -1,0 +1,15 @@
+
+
+#header-carousel .carousel-item img {
+    height: 1000px;
+}
+
+@media screen and (max-width: 800px) {
+    #header-carousel .carousel-item img {
+        display: block;
+        position: absolute;
+        height: 100%;
+        object-fit: cover;
+        max-height: 800px;
+    }
+}

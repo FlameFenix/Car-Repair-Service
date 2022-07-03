@@ -1,7 +1,17 @@
+import './carousel.css'
+
+function isItemActive(isActive) {
+    if(isActive == "true") {
+        return "carousel-item active";
+    } else {
+        return "carousel-item";
+    }
+}
+
 function CarouselItem(props) {
     return (
-    <div className="carousel-item">
-        <img className="w-100" src={props.imageUrl} alt={"asd"} style={{height: "1000px"}}/>
+    <div className={isItemActive(props.activeItem)}>
+        <img className="w-100" src={props.imageUrl} alt={"asd"}/>
         <div className="carousel-caption d-flex align-items-center">
             <div className="container">
                 <div className="row align-items-center justify-content-center justify-content-lg-start">
