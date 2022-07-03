@@ -1,0 +1,36 @@
+.login-form .container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    flex-wrap: wrap;
+    width: 20%;
+    border: 1px solid #ff737f;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 25px;
+    gap: 10px;
+    -webkit-box-shadow: 0px 0px 20px -5px rgba(163, 163, 163, 0.5);
+    box-shadow: 0px 0px 20px -5px rgba(163, 163, 163, 0.5);
+}
+
+.container .btns {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.loginbtn {
+    width: 30%;
+    background-color: #d81324;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 15px;
+    margin: 10px auto;
+}
+
+.loginbtn:hover {
+    border: 1px solid #d81324;
+    background-color: #fff;
+    color: black;
+}

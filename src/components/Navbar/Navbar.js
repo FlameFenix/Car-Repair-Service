@@ -20,8 +20,8 @@ function Navbar() {
             <div className="dropdown-menu fade-up m-0">
               <NavLink to="/Booking" className="dropdown-item">Booking</NavLink>
               <NavLink to="/Team" className="dropdown-item">Technicians</NavLink>
-              <NavLink to="testimonial.html" className="dropdown-item">Testimonial</NavLink>
-              <NavLink to="404.html" className="dropdown-item">404 Page</NavLink>
+              <NavLink to="/Register" className="dropdown-item">Регистрация</NavLink>
+              <NavLink to="/Login" className="dropdown-item">Вход</NavLink>
             </div>
           </div>
         </div>

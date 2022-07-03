@@ -9,6 +9,8 @@ import Topbar from './components/Topbar/Topbar'
 import Booking from './components/Booking/Booking'
 import NotFound from './components/NotFound/NotFound'
 import Contacts from './components/Contacts/Contacts'
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/Services" element={<Services />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Contacts" element={<Contacts/>} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
 
