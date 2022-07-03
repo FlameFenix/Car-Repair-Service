@@ -17,10 +17,15 @@ export const Timer = (props) => {
     if(seconds < 10) {
         seconds = '0' + seconds
     }
+    if(minutes > 59) {
+        minutes = 0;
+    }
 
     if(minutes < 10) {
         minutes = '0' + minutes;
     }
+
+
 
     if(hours < 10) {
         hours = '0' + hours

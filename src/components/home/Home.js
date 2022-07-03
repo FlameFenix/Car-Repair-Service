@@ -1,5 +1,15 @@
-export default function Home() {
+import Carousel from "../Carousel/Carousel";
+import Service from "../Service/Service";
+import Spinner from "../Spinner/Spinner";
+
+function Home() {
     return (
-  <h1> hello </h1>
+        <div>
+            <Spinner />
+            <Carousel />
+            <Service />
+        </div>
     );
 }
+
+export default Home;

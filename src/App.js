@@ -1,32 +1,33 @@
 import './App.css';
-import Spinner from "../src/components/Spinner/Spinner"
-import Topbar from "../src/components/Topbar/Topbar"
-import Navbar from "../src/components/Navbar/Navbar"
-import Carousel from './components/Carousel/Carousel';
-import Service from './components/Service/Service';
-import About from './components/about/About';
-import Fact from './components/Fact/Fact';
-import Services from './components/services/Services';
-import Booking from './components/booking/Booking';
-import Footer from './components/footer/Footer';
-import { Timer } from './components/Timer/Timer';
+import About from './components/About/About';
+import Home from './components/Home/Home'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Services from './components/Services/Services'
+import Topbar from './components/Topbar/Topbar'
+import Booking from './components/Booking/Booking'
+import NotFound from './components/NotFound/NotFound'
+import Contacts from './components/Contacts/Contacts'
 
 function App() {
   return (
     <div className="App">
-
-      <Timer />
-      <Spinner />
       <Topbar />
       <Navbar />
-      <Carousel />
-      <Service />
-      <About />
-      <Fact />
-      <Services />
-      <Booking />
+
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/Booking" element={<Booking />} />
+        <Route path="/Contacts" element={<Contacts/>} />
+        <Route path="*" element={<NotFound/>} />
+      </Routes>
+
       <Footer />
     </div>
+
   );
 }
 

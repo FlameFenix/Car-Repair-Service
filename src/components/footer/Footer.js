@@ -4,10 +4,10 @@ function Footer() {
             <div className="container py-5">
                 <div className="row g-5">
                     <div className="col-lg-3 col-md-6">
-                        <h4 className="text-light mb-4">Address</h4>
-                        <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p className="mb-2"><i className="fa fa-envelope me-3"></i>info@example.com</p>
+                        <h4 className="text-light mb-4">Адрес</h4>
+                        <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>Загоре 3, Раднево, България</p>
+                        <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+088 6 244 800</p>
+                        <p className="mb-2"><i className="fa fa-envelope me-3"></i>etdido2000@abv.bg</p>
                         <div className="d-flex pt-2" style={{transform: "translate(25%, 50%)"}}>
                             <a className="btn btn-outline-light btn-social" href="index.html"><i className="fab fa-twitter"></i></a>
                             <a className="btn btn-outline-light btn-social" href="index.html"><i className="fab fa-facebook-f"></i></a>
@@ -16,19 +16,19 @@ function Footer() {
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6">
-                        <h4 className="text-light mb-4">Opening Hours</h4>
-                        <h6 className="text-light">Monday - Friday:</h6>
+                        <h4 className="text-light mb-4">Работно време</h4>
+                        <h6 className="text-light">Понеделник - Петък:</h6>
                         <p className="mb-4">09.00 AM - 09.00 PM</p>
-                        <h6 className="text-light">Saturday - Sunday:</h6>
+                        <h6 className="text-light">Събота - Неделя:</h6>
                         <p className="mb-0">09.00 AM - 12.00 PM</p>
                     </div>
                     <div className="col-lg-3 col-md-6">
-                        <h4 className="text-light mb-4">Services</h4>
-                        <a className="btn btn-link" href="index.html">Diagnostic Test</a>
-                        <a className="btn btn-link" href="index.html">Engine Servicing</a>
-                        <a className="btn btn-link" href="index.html">Tires Replacement</a>
-                        <a className="btn btn-link" href="index.html">Oil Changing</a>
-                        <a className="btn btn-link" href="index.html">Vacuam Cleaning</a>
+                        <h4 className="text-light mb-4">Услуги</h4>
+                        <a className="btn btn-link" href="index.html">Диагностика</a>
+                        <a className="btn btn-link" href="index.html">Ремонт на двигатели</a>
+                        <a className="btn btn-link" href="index.html">Ремонт на трансмисия</a>
+                        <a className="btn btn-link" href="index.html">Смяна на масло</a>
+                        <a className="btn btn-link" href="index.html">Климатична система</a>
                     </div>
                     <div className="col-lg-3 col-md-6">
                         <h4 className="text-light mb-4">Newsletter</h4>
