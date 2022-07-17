@@ -78,7 +78,7 @@ function Booking() {
     }
 
     return (
-        <div className="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s" style={{ visibility: "hidden", animationDelay: "0.1s", animationName: "none" }}>
+        <div className="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s" >
             <div className="container">
                 <div className="row gx-5">
                     <div className="col-lg-6 py-5">
@@ -88,7 +88,7 @@ function Booking() {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s" style={{ visibility: "hidden", animationDelay: "0.6s", animationName: "none" }}>
+                        <div className="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
                             <h1 className="text-white mb-4">Book For A Service</h1>
                             <form onSubmit={submitHandler}>
                                 <div className="row g-3">
@@ -101,7 +101,6 @@ function Booking() {
                                             onChange={(e) => valuesHandler(e)}
                                             onBlur={(e) => nameValidationHandler(e, 3)}
                                             placeholder="Въведете име"
-                                            style={{ height: "55px" }}
                                         />
 
                                         {errors.fullName &&
@@ -119,7 +118,7 @@ function Booking() {
                                             value={values.email}
                                             onChange={(e) => valuesHandler(e)}
                                             onBlur={(e) => emailValidationHandler(e)}
-                                            placeholder="Въведете имейл" style={{ height: "55px" }}
+                                            placeholder="Въведете имейл"
                                         />
 
                                         {errors.email &&
@@ -136,11 +135,10 @@ function Booking() {
                                             value={values.service}
                                             onChange={(e) => valuesHandler(e)}
                                             onBlur={(e) => serviceValidationHandler(e)}
-                                            style={{ height: "55px" }}
                                         >
                                             <option value="0">Избери услуга</option>
-                                            <option value="1">Service 1</option>
-                                            <option value="2">Service 2</option>
+                                            <option value="1">Диагностика</option>
+                                            <option value="2">Обслужване</option>
                                             <option value="3">Service 3</option>
                                         </select>
 
@@ -154,7 +152,6 @@ function Booking() {
                                                 value={values.date}
                                                 onChange={(e) => valuesHandler(e)}
                                                 placeholder="Service Date"
-                                                style={{ height: "55px" }}
                                             />
                                         </div>
                                     </div>
