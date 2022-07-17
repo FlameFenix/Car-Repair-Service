@@ -2,7 +2,9 @@ import Carousel from "../Carousel/Carousel";
 import Service from "../Service/Service";
 import Spinner from "../Spinner/Spinner";
 
-import { useState } from 'react';
+import './Home.css'
+
+import { Fragment, useState } from 'react';
 import { useEffect } from 'react';
 
 
@@ -12,14 +14,23 @@ function Home() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 3000);
     })
 
     return (
         <div>
-            {loading && <Spinner />}
-            <Carousel />
-            <Service />
+            {loading &&
+            <div className="spinner">
+                <Spinner />
+            </div>
+            }
+
+            {!loading &&
+                <Fragment>
+                    <Carousel />
+                    <Service />
+                </Fragment>
+            }
         </div>
     );
 }

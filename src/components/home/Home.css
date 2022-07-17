@@ -1,0 +1,17 @@
+.spinner {
+    width: 500px;
+    height: 500px;
+    display: block;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+@media screen and (max-width: 600px) {
+    .spinner {
+        width: 400px;
+        height: 400px;
+        display: block;
+        justify-content: center;
+        margin: 50px auto;
+    }
+}

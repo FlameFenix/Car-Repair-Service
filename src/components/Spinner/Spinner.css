@@ -1,51 +1,73 @@
 .loader {
-    animation: spin 1s infinite linear;
-    border: solid 2vmin transparent;
-    border-radius: 50%;
-    border-right-color: #d81324;
-    border-top-color: #d81324;
-    box-sizing: border-box;
-    height: 20vmin;
-    left: calc(50% - 10vmin);
-    position: fixed;
-    top: calc(50% - 10vmin);
-    width: 20vmin;
-    z-index: 1;
+    width: 20em;
+    height: 20em;
+    font-size: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.loader:before {
-    animation: spin 2s infinite linear;
-    border: solid 2vmin transparent;
-    border-radius: 50%;
-    border-right-color: #ff2f00;
-    border-top-color: #ff2f00;
-    box-sizing: border-box;
-    content: "";
-    height: 16vmin;
-    left: 0;
+.loader .face {
     position: absolute;
-    top: 0;
-    width: 16vmin;
-}
-
-.loader:after {
-    animation: spin 3s infinite linear;
-    border: solid 2vmin transparent;
     border-radius: 50%;
-    border-right-color: #ff7600;
-    border-top-color: #ff7600;
-    box-sizing: border-box;
-    content: "";
-    height: 12vmin;
-    left: 2vmin;
-    position: absolute;
-    top: 2vmin;
-    width: 12vmin;
+    border-style: solid;
+    animation: animate 3s linear infinite;
 }
 
+.loader .face:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    color: rgb(255, 60, 0);
+    border-color: currentColor transparent transparent currentColor;
+    border-width: 0.2em 0.2em 0em 0em;
+    --deg: -45deg;
+    animation-direction: normal;
+}
 
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
+.loader .face:nth-child(2) {
+    width: 70%;
+    height: 70%;
+    color: rgb(255, 0, 0);
+    border-color: currentColor currentColor transparent transparent;
+    border-width: 0.2em 0em 0em 0.2em;
+    --deg: -135deg;
+    animation-direction: reverse;
+}
+
+.loader .face .circle {
+    position: absolute;
+    width: 50%;
+    height: 0.1em;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: rotate(var(--deg));
+    transform-origin: left;
+}
+
+.loader .face .circle::before {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 2em,
+                0 0 4em,
+                0 0 6em,
+                0 0 8em,
+                0 0 10em,
+                0 0 0 0.5em rgba(255, 255, 0, 0.1);
+}
+
+@keyframes animate {
+    to {
+        transform: rotate(1turn);
     }
 }

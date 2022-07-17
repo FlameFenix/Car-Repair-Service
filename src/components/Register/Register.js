@@ -2,9 +2,13 @@ import './register.css'
 import { NavLink } from 'react-router-dom';
 
 function Register() {
+    const registerHandler = () => {
+
+    }
+
     return (
         <div className="register-form">
-            <form action="action_page.php">
+            <form onSubmit={registerHandler}>
                 <div className="container">
                     <h1>Регистрация</h1>
                     <p>Всички полета са задължителни!</p>
