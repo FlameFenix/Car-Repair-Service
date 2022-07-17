@@ -1,6 +1,84 @@
+import { useState } from "react";
+import './booking.css'
+
 function Booking() {
+
+    const [values, setValues] = useState({
+        fullName: '',
+        email: '',
+        service: '0',
+        date: '',
+        comment: '',
+    });
+
+    const [errors, SetErrors] = useState('');
+
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
+
+    const valuesHandler = (e) => {
+        setValues(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        if (values.service == "0") {
+            return alert('Трябва да изберете услуга!');
+        }
+
+        if (values.date == '') {
+            return alert('Трябва да изберете дата!');
+        }
+
+        console.log(values);
+    }
+
+    const nameValidationHandler = (e, bound) => {
+        if (e.target.value.length < bound) {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        } else {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        }
+    }
+
+    const emailValidationHandler = (e) => {
+        if (!emailRegex.test(e.target.value)) {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        } else {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        }
+    }
+
+    const serviceValidationHandler = (e) => {
+        if (e.target.value == '0') {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        } else {
+            SetErrors(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        }
+    }
+
     return (
-        <div className="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s" style={{visibility: "hidden", animationDelay: "0.1s", animationName: "none"}}>
+        <div className="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s" style={{ visibility: "hidden", animationDelay: "0.1s", animationName: "none" }}>
             <div className="container">
                 <div className="row gx-5">
                     <div className="col-lg-6 py-5">
@@ -10,31 +88,85 @@ function Booking() {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s" style={{visibility: "hidden", animationDelay: "0.6s", animationName: "none"}}>
+                        <div className="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s" style={{ visibility: "hidden", animationDelay: "0.6s", animationName: "none" }}>
                             <h1 className="text-white mb-4">Book For A Service</h1>
-                            <form>
+                            <form onSubmit={submitHandler}>
                                 <div className="row g-3">
                                     <div className="col-12 col-sm-6">
-                                        <input type="text" className="form-control border-0" placeholder="Your Name" style={{height: "55px"}} />
+                                        <input
+                                            type="text"
+                                            className="form-control border-0"
+                                            name="fullName"
+                                            value={values.fullName}
+                                            onChange={(e) => valuesHandler(e)}
+                                            onBlur={(e) => nameValidationHandler(e, 3)}
+                                            placeholder="Въведете име"
+                                            style={{ height: "55px" }}
+                                        />
+
+                                        {errors.fullName &&
+                                            < p className="form-error">
+                                                Името трябва да съдържа минимум 3 символа!
+                                            </p>
+                                        }
+
                                     </div>
                                     <div className="col-12 col-sm-6">
-                                        <input type="email" className="form-control border-0" placeholder="Your Email" style={{height: "55px"}} />
+                                        <input
+                                            type="email"
+                                            className="form-control border-0"
+                                            name="email"
+                                            value={values.email}
+                                            onChange={(e) => valuesHandler(e)}
+                                            onBlur={(e) => emailValidationHandler(e)}
+                                            placeholder="Въведете имейл" style={{ height: "55px" }}
+                                        />
+
+                                        {errors.email &&
+                                            < p className="form-error">
+                                                Невалиден имейл адрес!
+                                            </p>
+                                        }
                                     </div>
+
                                     <div className="col-12 col-sm-6">
-                                        <select className="form-select border-0" style={{height: "55px"}} defaultValue={"0"}>
-                                            <option value="0">Select A Service</option>
+                                        <select
+                                            className="form-select border-0"
+                                            name="service"
+                                            value={values.service}
+                                            onChange={(e) => valuesHandler(e)}
+                                            onBlur={(e) => serviceValidationHandler(e)}
+                                            style={{ height: "55px" }}
+                                        >
+                                            <option value="0">Избери услуга</option>
                                             <option value="1">Service 1</option>
                                             <option value="2">Service 2</option>
                                             <option value="3">Service 3</option>
                                         </select>
+
                                     </div>
                                     <div className="col-12 col-sm-6">
                                         <div className="date" id="date1" data-target-input="nearest">
-                                            <input type="text" className="form-control border-0 datetimepicker-input" placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style={{height: "55px"}} />
+                                            <input
+                                                type="date"
+                                                className="form-control border-0 datetimepicker-input"
+                                                name="date"
+                                                value={values.date}
+                                                onChange={(e) => valuesHandler(e)}
+                                                placeholder="Service Date"
+                                                style={{ height: "55px" }}
+                                            />
                                         </div>
                                     </div>
                                     <div className="col-12">
-                                        <textarea className="form-control border-0" placeholder="Special Request"></textarea>
+                                        <textarea
+                                            className="form-control border-0"
+                                            name="comment"
+                                            value={values.comment}
+                                            onChange={(e) => valuesHandler(e)}
+                                            placeholder="Коментар"
+                                        >
+                                        </textarea>
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-secondary w-100 py-3" type="submit">Book Now</button>

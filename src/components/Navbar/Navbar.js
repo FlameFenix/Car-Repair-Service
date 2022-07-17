@@ -25,7 +25,7 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <NavLink to="/" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3"></i></NavLink>
+        <NavLink to="/Booking" className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Запишете час<i className="fa fa-arrow-right ms-3"></i></NavLink>
       </div>
     </nav>
   );

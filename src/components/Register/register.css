@@ -16,14 +16,13 @@
     width: 40%;
     margin: 0 auto;
     background-color: #d81324;
+    border: 1px solid #d81324;
     color: #fff;
-    border: none;
     border-radius: 30px;
     padding: 5px 15px;
 }
 
 .registerbtn:hover {
-    border: 1px solid #d81324;
     background-color: #fff;
     color: black;
 }

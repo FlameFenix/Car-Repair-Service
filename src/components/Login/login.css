@@ -23,14 +23,13 @@
     width: 30%;
     background-color: #d81324;
     color: #fff;
-    border: none;
+    border: 1px solid #d81324;
     border-radius: 30px;
     padding: 5px 15px;
     margin: 10px auto;
 }
 
 .loginbtn:hover {
-    border: 1px solid #d81324;
     background-color: #fff;
     color: black;
 }

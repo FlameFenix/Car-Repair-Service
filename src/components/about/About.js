@@ -14,8 +14,8 @@ function About() {
           </div>
           <div className="col-lg-6">
             <h6 className="text-primary text-uppercase">About Us</h6>
-            <h1 className="mb-4"><span className="text-primary">Автосервиз "Димитров"</span> Is The Best Place For Your Auto Care</h1>
-            <p className="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+            <h1 className="mb-4"><span className="text-primary">Автосервиз "Димитров"</span> Искате да получите най-доброто обслужане за вашият автомобил тук е мястото!</h1>
+            <p className="mb-4">Опита ни в сферата на автомобилите се гради на много обучения и предимно практика. Екипът ни е не е огромен, но сме хора, които желаят да се развиват и постоянно надграждаме възможностите си за да удовлетворим нуждите на клиентите си.. Доказали сме се със знания, перфектно извършени услуги и много клиенти през годините.</p>
             <div className="row g-4 mb-3 pb-3">
               <div className="col-12 wow fadeIn" data-wow-delay="0.1s">
                 <div className="d-flex justify-content-center">
@@ -23,8 +23,8 @@ function About() {
                     <span className="fw-bold text-secondary">01</span>
                   </div>
                   <div className="ps-3">
-                    <h6>Professional & Expert</h6>
-                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                    <h6>Екип от професионалисти</h6>
+                    <span>Обученията за нас са най-важни, така се развиваме.</span>
                   </div>
                 </div>
               </div>
@@ -34,8 +34,8 @@ function About() {
                     <span className="fw-bold text-secondary">02</span>
                   </div>
                   <div className="ps-3">
-                    <h6>Quality Servicing Center</h6>
-                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                    <h6>Качествено обслужване</h6>
+                    <span>Най-доброто за вашия автомобил е на първо място!</span>
                   </div>
                 </div>
               </div>
@@ -45,13 +45,13 @@ function About() {
                     <span className="fw-bold text-secondary">03</span>
                   </div>
                   <div className="ps-3">
-                    <h6>Awards Winning Workers</h6>
-                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                    <h6>Сертификати, които притежаваме</h6>
+                    <span>Развиваме се постоянно в сферата на автомобилите.</span>
                   </div>
                 </div>
               </div>
             </div>
-            <a href="index.html" className="btn btn-primary py-3 px-5">Read More<i className="fa fa-arrow-right ms-3"></i></a>
+            <a href="index.html" className="btn btn-primary py-3 px-5">Прочети повече<i className="fa fa-arrow-right ms-3"></i></a>
           </div>
         </div>
       </div>
