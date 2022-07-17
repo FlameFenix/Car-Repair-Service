@@ -34,6 +34,10 @@
     color: black;
 }
 
+p.form-error {
+    color: #d81324;
+}
+
 @media screen and (max-width: 600px) {
     .login-form .container {
         display: flex;
