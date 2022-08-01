@@ -1,9 +1,16 @@
 import './login.css';
 
-import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import * as userService from '../../services/userService';
+import { AuthContext } from '../../contexts/authContext';
 
 function Login() {
+
+    const navigate = useNavigate();
+
+    const { onLogin } = useContext(AuthContext);
+
     const [values, setValues] = useState({
         email: '',
         password: '',
@@ -21,9 +28,16 @@ function Login() {
     const loginSubmitHandler = (e) => {
         e.preventDefault();
 
-        const formData = { ...values }
+        userService.loginUser(values)
+            .then(res => {
+                onLogin(res)
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error)
+                navigate('/login')
+            });
 
-        console.log(formData);
     }
 
     const dataValidateHandler = (e, bound) => {
