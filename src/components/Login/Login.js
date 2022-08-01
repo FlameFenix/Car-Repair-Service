@@ -50,14 +50,14 @@ function Login() {
                         placeholder="Въведете имейл"
                         value={values.email}
                         onChange={(e) => loginDataHandler(e)}
-                        onBlur={(e) => dataValidateHandler(e, 3)}
+                        onBlur={(e) => dataValidateHandler(e, 6)}
                         name="email" id="email"
                         required
                     />
 
                     {errors.email &&
                         < p className="form-error">
-                            Имейла трябва да съдържа минимум 3 символа!
+                            Имейла трябва да съдържа минимум 6 символа!
                         </p>
                     }
 
@@ -67,14 +67,14 @@ function Login() {
                         placeholder="Въведете парола"
                         value={values.password}
                         onChange={(e) => loginDataHandler(e)}
-                        onBlur={(e) => dataValidateHandler(e, 3)}
+                        onBlur={(e) => dataValidateHandler(e, 4)}
                         name="password"
                         id="password"
                         required
                     />
                     {errors.password &&
                         <p className="form-error">
-                            Паролата трябва да съдържа минимум 3 символа!
+                            Паролата трябва да съдържа минимум 4 символа!
                         </p>
                     }
 

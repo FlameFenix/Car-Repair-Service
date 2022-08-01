@@ -3,12 +3,12 @@ import './Spinner.css'
 function Spinner() {
   return (
     
-    <div class="loader">
-      <div class="face">
-        <div class="circle"></div>
+    <div className="loader">
+      <div className="face">
+        <div className="circle"></div>
       </div>
-      <div class="face">
-        <div class="circle"></div>
+      <div className="face">
+        <div className="circle"></div>
       </div>
     </div>
 
