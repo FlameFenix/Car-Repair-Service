@@ -1,5 +1,5 @@
 function isFirst(id) {
-    if(id == 'tab-pane-1') {
+    if(id === 'tab-pane-1') {
        return "tab-pane fade show active"
     } else {
        return "tab-pane fade"

@@ -1,5 +1,5 @@
 import './register.css'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import * as userService from '../../services/userService';
 
 function Register() {
@@ -14,8 +14,8 @@ function Register() {
 
         userService.registerUser({ email, password });
 
-        userService.loginUser({email, password});
-
+        userService.loginUser({ email, password });
+        
         navigate('/');
     }
 
@@ -34,7 +34,7 @@ function Register() {
 
                     <label htmlFor="psw-repeat"><b>Повтори парола</b></label>
                     <input type="password" placeholder="Въведете парола отново" name="psw-repeat" id="psw-repeat" required />
-                    <p>By creating an account you agree to our <a href="#">Terms and Privacy</a>.</p>
+                    <p>By creating an account you agree to our <Link to="/privacy">Terms and Privacy</Link>.</p>
                     <input type="submit" className="registerbtn" value="Регистрация" />
 
                     <p>Already have an account? <NavLink to="/Login">Sign in</NavLink>.</p>

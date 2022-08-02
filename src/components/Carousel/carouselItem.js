@@ -1,7 +1,7 @@
 import './carousel.css'
 
 function isItemActive(isActive) {
-    if(isActive == "true") {
+    if(isActive === "true") {
         return "carousel-item active";
     } else {
         return "carousel-item";

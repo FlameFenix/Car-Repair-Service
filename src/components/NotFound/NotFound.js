@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function NotFound() {
     return (
         <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -8,7 +10,7 @@ function NotFound() {
                         <h1 className="display-1">404</h1>
                         <h1 className="mb-4">Page Not Found</h1>
                         <p className="mb-4">Съжаляваме, но страницата, която се опитвате да достъпите, не може да бъде намерена.</p>
-                        <a className="btn btn-primary rounded-pill py-3 px-5" href="/">Начало</a>
+                        <Link className="btn btn-primary rounded-pill py-3 px-5" to="/">Начало</Link>
                     </div>
                 </div>
             </div>

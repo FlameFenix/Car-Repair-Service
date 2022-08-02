@@ -31,6 +31,7 @@ function Contacts() {
                     </div>
                     <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
                         <iframe className="position-relative rounded w-100 h-100"
+                            title="location"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.280089759805!2d25.934633299999998!3d42.27254409999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a7dfb249e10e5f%3A0xe82d63b431558ec5!2z0JTQuNC00L4gMjAwMA!5e0!3m2!1sen!2sbg!4v1656847477218!5m2!1sen!2sbg"
                             style={{ minHeight: "350px", border: "0", allowfullscreen: "", ariaHidden: "false" }}
                             tabindex="0">
@@ -62,7 +63,7 @@ function Contacts() {
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <textarea className="form-control" placeholder="Leave a message here" id="message" style={{height: "100px"}}></textarea>
+                                            <textarea className="form-control" placeholder="Leave a message here" id="message" style={{ height: "100px" }}></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>

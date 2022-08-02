@@ -29,8 +29,9 @@ const request = async (method, url, data, accessToken) => {
 
         return result;
 
+
     } catch (error) {
-        alert(error);
+        console.log(error);
     }
 }
 

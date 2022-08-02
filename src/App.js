@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
+import PrivateRoute from './components/common/PrivateRoute';
 
 
 function App() {
@@ -37,10 +38,13 @@ function App() {
         <Navbar />
 
         <Routes>
+          <Route element={<PrivateRoute />}>
+            <Route path="/Booking" element={<Booking />} />
+            <Route path="/Services/:serviceId" element={<Services />} />
+          </Route>
           <Route path="/" exact element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Services" element={<Services />} />
-          <Route path="/Booking" element={<Booking />} />
           <Route path="/Contacts" element={<Contacts />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Login" element={<Login />} />

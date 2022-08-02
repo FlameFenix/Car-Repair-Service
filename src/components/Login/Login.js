@@ -18,7 +18,7 @@ function Login() {
 
     const [errors, setErrors] = useState('');
 
-    const loginDataHandler = (e) => {
+    const onChangeHandler = (e) => {
         setValues(state => ({
             ...state,
             [e.target.name]: e.target.value
@@ -63,7 +63,7 @@ function Login() {
                         type="text"
                         placeholder="Въведете имейл"
                         value={values.email}
-                        onChange={(e) => loginDataHandler(e)}
+                        onChange={(e) => onChangeHandler(e)}
                         onBlur={(e) => dataValidateHandler(e, 6)}
                         name="email" id="email"
                         required
@@ -80,7 +80,7 @@ function Login() {
                         type="password"
                         placeholder="Въведете парола"
                         value={values.password}
-                        onChange={(e) => loginDataHandler(e)}
+                        onChange={(e) => onChangeHandler(e)}
                         onBlur={(e) => dataValidateHandler(e, 4)}
                         name="password"
                         id="password"

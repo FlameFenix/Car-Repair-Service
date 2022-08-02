@@ -1,11 +1,17 @@
 import { useState } from "react";
+
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/authContext";
+
 import './booking.css'
 
 function Booking() {
 
+    const { user } = useContext(AuthContext);
+
     const [values, setValues] = useState({
         fullName: '',
-        email: '',
+        email: user.userData.email,
         service: '0',
         date: '',
         comment: '',
@@ -24,11 +30,11 @@ function Booking() {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        if (values.service == "0") {
+        if (values.service === "0") {
             return alert('Трябва да изберете услуга!');
         }
 
-        if (values.date == '') {
+        if (values.date === '') {
             return alert('Трябва да изберете дата!');
         }
 
@@ -64,7 +70,7 @@ function Booking() {
     }
 
     const serviceValidationHandler = (e) => {
-        if (e.target.value == '0') {
+        if (e.target.value === '0') {
             SetErrors(state => ({
                 ...state,
                 [e.target.name]: true
