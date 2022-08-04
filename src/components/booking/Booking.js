@@ -1,13 +1,18 @@
 import { useState } from "react";
 
 import { useContext } from "react";
+import { Navigate, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/authContext";
+
+import * as bookingService from '../../services/bookingService';
 
 import './booking.css'
 
 function Booking() {
 
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const [values, setValues] = useState({
         fullName: '',
@@ -38,7 +43,9 @@ function Booking() {
             return alert('Трябва да изберете дата!');
         }
 
-        console.log(values);
+        bookingService.bookForService(values, user.userData.accessToken);
+
+        navigate('/Catalogue');
     }
 
     const nameValidationHandler = (e, bound) => {
@@ -128,7 +135,7 @@ function Booking() {
                                         />
 
                                         {errors.email &&
-                                            < p className="form-error">
+                                            <p className="form-error">
                                                 Невалиден имейл адрес!
                                             </p>
                                         }
@@ -143,8 +150,8 @@ function Booking() {
                                             onBlur={(e) => serviceValidationHandler(e)}
                                         >
                                             <option value="0">Избери услуга</option>
-                                            <option value="1">Диагностика</option>
-                                            <option value="2">Обслужване</option>
+                                            <option value="Диагностика">Диагностика</option>
+                                            <option value="Обслужване">Обслужване</option>
                                             <option value="3">Service 3</option>
                                         </select>
 

@@ -15,6 +15,7 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
 import PrivateRoute from './components/common/PrivateRoute';
+import { Catalogue } from './components/catalogue/Catalogue';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Routes>
           <Route element={<PrivateRoute />}>
             <Route path="/Booking" element={<Booking />} />
+            <Route path="/Catalogue" element={<Catalogue />} />
             <Route path="/Services/:serviceId" element={<Services />} />
           </Route>
           <Route path="/" exact element={<Home />} />

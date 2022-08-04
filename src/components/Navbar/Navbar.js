@@ -22,6 +22,7 @@ function Navbar() {
               <NavLink to="/Team" className="dropdown-item">Technicians</NavLink>
               <NavLink to="/Register" className="dropdown-item">Регистрация</NavLink>
               <NavLink to="/Login" className="dropdown-item">Вход</NavLink>
+              <NavLink to="/Catalogue" className="dropdown-item">Каталог</NavLink>
             </div>
           </div>
         </div>
