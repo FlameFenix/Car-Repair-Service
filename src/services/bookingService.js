@@ -9,3 +9,7 @@ export const bookForService = async (bookingData, accessToken) => {
 export const listOfBooking = async () => {
     return await request.get(baseUrl);
 }
+
+export const getOneById = async (id) => {
+    return await request.get(baseUrl + `/${id}`);
+}

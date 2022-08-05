@@ -1,7 +1,8 @@
+
 import { useState } from "react";
 
 import { useContext } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/authContext";
 
 import * as bookingService from '../../services/bookingService';
@@ -35,6 +36,7 @@ function Booking() {
 
     const submitHandler = (e) => {
         e.preventDefault()
+
         if (values.service === "0") {
             return alert('Трябва да изберете услуга!');
         }

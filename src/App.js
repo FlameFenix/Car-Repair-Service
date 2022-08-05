@@ -10,12 +10,14 @@ import NotFound from './components/NotFound/NotFound'
 import Contacts from './components/contacts/Contacts'
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/common/PrivateRoute';
+import { Catalogue } from './components/catalogue/Catalogue';
+import { Details } from './components/details/Details';
 
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
-import PrivateRoute from './components/common/PrivateRoute';
-import { Catalogue } from './components/catalogue/Catalogue';
+
 
 
 function App() {
@@ -42,9 +44,10 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/Booking" element={<Booking />} />
             <Route path="/Catalogue" element={<Catalogue />} />
+            <Route path="/Details/:id" element={<Details />} />
             <Route path="/Services/:serviceId" element={<Services />} />
           </Route>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Services" element={<Services />} />
           <Route path="/Contacts" element={<Contacts />} />

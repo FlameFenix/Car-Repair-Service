@@ -11,6 +11,11 @@ th {
     border: 1px solid #808080;
     text-align: left;
     padding: 8px;
+
+}
+
+tr:nth-child(odd) {
+    color: #d81324;
 }
 
 tr:nth-child(even) {
