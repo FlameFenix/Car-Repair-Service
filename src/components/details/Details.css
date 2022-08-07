@@ -7,8 +7,8 @@
     border: 1px solid #d81324;
     border-radius: 10px;
     color: #d81324;
-    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3); 
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.3);
 }
 
 .details-page h2 {
@@ -47,4 +47,22 @@
 .deleteBtn:hover {
     background-color: #ff0015;
     ;
+}
+
+.goBackBtn {
+    width: 25%;
+    margin: 40px auto;
+    margin-bottom: 10px;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    background-color: #d81324;
+    color: #fff;
+    padding: 3px 15px;
+    text-transform: uppercase;
+}
+
+.goBackBtn:hover {
+    border: 1px solid #d81324;
+    background-color: #fff;
+    color: #d81324;
 }

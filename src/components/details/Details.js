@@ -1,7 +1,6 @@
-import { useContext } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from 'react-router-dom';
 import { AuthContext } from "../../contexts/authContext";
 import * as bookingService from '../../services/bookingService';
 
@@ -22,6 +21,7 @@ export const Details = () => {
 
     return (
         <div className="details-page">
+
             <h2>Детайли за услугата</h2>
             <p>Име: {catalogueItem.fullName}</p>
             <p>Имейл: {catalogueItem.email}</p>
@@ -34,6 +34,7 @@ export const Details = () => {
                     <button className="deleteBtn">Delete</button>
                 </div>
             }
+            <Link className="goBackBtn" to="/Catalogue">Go back</Link>
         </div >
     );
 }
