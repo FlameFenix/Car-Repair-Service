@@ -7,7 +7,9 @@ export const CatalogueItem = ({ _id, fullName, service, date }) => {
             <th className="user-name">{fullName}</th>
             <th className="service"> {service}</th>
             <th className="date">{date}</th>
-            <th className="button"><Link className="detailsBtn" to={`/Details/${_id}`}>More Details</Link></th>
+            <th className="button">
+                <Link className="detailsBtn" to={`/Details/${_id}`}>More Details</Link>
+            </th>
         </tr>
     );
 

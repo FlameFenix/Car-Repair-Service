@@ -13,11 +13,14 @@ import Login from './components/Login/Login';
 import PrivateRoute from './components/common/PrivateRoute';
 import { Catalogue } from './components/catalogue/Catalogue';
 import { Details } from './components/details/Details';
-
-import { Routes, Route } from 'react-router-dom';
-import { AuthContext } from './contexts/authContext';
-import { useState } from 'react';
 import { Logout } from './components/logout/Logout';
+
+
+import { AuthContext } from './contexts/authContext';
+import { BookingContext } from './contexts/bookingContext';
+
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -43,30 +46,34 @@ function App() {
     <div className="App">
 
       <AuthContext.Provider value={{ user, onLogin, onLogout }}>
-        <Topbar />
-        <Navbar />
+        <BookingContext.Provider value={{ user }}>
+          <Topbar />
+          <Navbar />
 
-        <Routes>
-          <Route element={<PrivateRoute />}>
-            <Route path="/Booking" element={<Booking />} />
-            <Route path="/Catalogue" element={<Catalogue />} />
-            <Route path="/Details/:id" element={<Details />} />
-            <Route path="/Services/:serviceId" element={<Services />} />
-            <Route path="/Logout" element={<Logout />} />
-          </Route>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Services" element={<Services />} />
-          <Route path="/Contacts" element={<Contacts />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+          <Routes>
 
-        <Footer />
+            <Route element={<PrivateRoute />}>
+              <Route path="/Booking" element={<Booking />} />
+              <Route path="/Catalogue" element={<Catalogue />} />
+              <Route path="/Details/:id" element={<Details />} />
+              <Route path="/Services/:serviceId" element={<Services />} />
+              <Route path="/Logout" element={<Logout />} />
+            </Route>
+
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Services" element={<Services />} />
+            <Route path="/Contacts" element={<Contacts />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+
+          <Footer />
+        </BookingContext.Provider>
       </AuthContext.Provider>
 
-    </div>
+    </div >
 
   );
 }

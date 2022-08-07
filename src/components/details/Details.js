@@ -29,7 +29,7 @@ export const Details = () => {
             <p>Дата: {catalogueItem.date}</p>
             <p>Коментар: {catalogueItem.comment}</p>
             {user.userData._id === catalogueItem._ownerId &&
-                < div class="detailsBtns">
+                < div className="detailsBtns">
                     <button className="editBtn">Edit</button>
                     <button className="deleteBtn">Delete</button>
                 </div>

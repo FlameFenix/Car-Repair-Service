@@ -22,3 +22,17 @@ tr:nth-child(even) {
     background-color: #d81324;
     color: #fff;
 }
+
+.noRecords td {
+    text-align: center;
+    font-size: 24px;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchForm .inputText {
+    padding: 0 20px;
+}
