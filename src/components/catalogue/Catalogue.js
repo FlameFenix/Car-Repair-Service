@@ -16,20 +16,26 @@ export const Catalogue = () => {
                 setBookingCatalogue(res)
                 console.log(res)
             })
+            .catch(error => console.log(error))
     }, []);
 
     return (
         <div>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Service</th>
-                    <th>Date</th>
-                    <th>More details</th>
-                </tr>
-                {bookingCatalogue.length !== 0
-                    ? bookingCatalogue.map(x => <CatalogueItem key={x._id} {...x} />)
-                    : <div>There are no records</div>}
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>More details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {bookingCatalogue 
+                        ? bookingCatalogue.map(x => <CatalogueItem key={x._id} {...x} />)
+                        : <tr><td>There are no records</td></tr>}
+                </tbody>
             </table>
         </div>
     );

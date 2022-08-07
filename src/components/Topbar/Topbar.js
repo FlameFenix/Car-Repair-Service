@@ -2,6 +2,7 @@ import './Topbar.css';
 
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/authContext';
+import { Link } from 'react-router-dom';
 
 function Topbar() {
 
@@ -26,6 +27,7 @@ function Topbar() {
               <>
                 <small className="fa fa-user-alt text-primary me-2"></small>
                 <small className="logged-in-username">Welcome, {user.userData.email}</small>
+                <small className="user-logout"><Link to="/Logout">Logout</Link></small>
               </>
             }
             <small className="fa fa-phone-alt text-primary me-2"></small>

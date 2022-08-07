@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import { AuthContext } from "../../contexts/authContext";
 import * as bookingService from '../../services/bookingService';
 
 import './Details.css'
 
 export const Details = () => {
     const itemId = useParams();
+    const { user } = useContext(AuthContext);
     const [catalogueItem, setCatalogueItem] = useState({});
 
     useEffect(() => {
@@ -25,10 +28,12 @@ export const Details = () => {
             <p>Вид услуга: {catalogueItem.service}</p>
             <p>Дата: {catalogueItem.date}</p>
             <p>Коментар: {catalogueItem.comment}</p>
-            <div class="detailsBtns">
-                <button className="editBtn">Edit</button>
-                <button className="deleteBtn">Delete</button>
-            </div>
-        </div>
+            {user.userData._id === catalogueItem._ownerId &&
+                < div class="detailsBtns">
+                    <button className="editBtn">Edit</button>
+                    <button className="deleteBtn">Delete</button>
+                </div>
+            }
+        </div >
     );
 }

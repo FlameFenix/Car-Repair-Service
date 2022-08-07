@@ -1,8 +1,18 @@
 .details-page {
+    display: flex;
+    flex-direction: column;
     padding: 50px;
-    margin: 50px;
-    border: 1px solid red;
+    margin: 50px auto;
+    width: 30%;
+    border: 1px solid #d81324;
     border-radius: 10px;
+    color: #d81324;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3); 
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.3);
+}
+
+.details-page h2 {
+    color: #0B2154;
 }
 
 .detailsBtns {
@@ -20,12 +30,21 @@
     padding: 3px 25px;
 }
 
+.editBtn:hover {
+    background-color: rgb(2, 168, 2);
+}
+
 .deleteBtn {
-    background-color: red;
+    background-color: #d81324;
     color: #fff;
     margin-right: 10px;
     text-transform: uppercase;
     border: 1px solid grey;
     border-radius: 10px;
     padding: 3px 15px;
+}
+
+.deleteBtn:hover {
+    background-color: #ff0015;
+    ;
 }

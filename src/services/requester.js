@@ -25,9 +25,14 @@ const request = async (method, url, data, accessToken) => {
 
         const response = await buildRequest;
 
-        const result = await response.json();
+        console.log(response);
+        
+        if (response.ok) {
+            const result = await response.json();
 
-        return result;
+            return result;
+        }
+
 
 
     } catch (error) {

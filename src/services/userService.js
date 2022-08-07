@@ -9,3 +9,15 @@ export const registerUser = async (userData) => {
 export const loginUser = async (userData) => {
     return await request.post(baseUrl + '/login', userData);
 }
+
+export const logoutUser = async (accessToken) => {
+    try {
+        const res = await fetch(baseUrl + '/logout', {
+            headers: {
+                'X-Authorization': accessToken
+            }
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}

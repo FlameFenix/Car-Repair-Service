@@ -17,6 +17,7 @@ import { Details } from './components/details/Details';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContext } from './contexts/authContext';
 import { useState } from 'react';
+import { Logout } from './components/logout/Logout';
 
 
 
@@ -32,11 +33,16 @@ function App() {
 
   }
 
+  const onLogout = () => {
+    setUser({});
+    localStorage.clear();
+  }
+
   return (
 
     <div className="App">
 
-      <AuthContext.Provider value={{ user, onLogin }}>
+      <AuthContext.Provider value={{ user, onLogin, onLogout }}>
         <Topbar />
         <Navbar />
 
@@ -46,6 +52,7 @@ function App() {
             <Route path="/Catalogue" element={<Catalogue />} />
             <Route path="/Details/:id" element={<Details />} />
             <Route path="/Services/:serviceId" element={<Services />} />
+            <Route path="/Logout" element={<Logout />} />
           </Route>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
