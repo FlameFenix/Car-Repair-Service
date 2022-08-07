@@ -4,6 +4,13 @@ const request = async (method, url, data, accessToken) => {
 
         if (method === 'GET') {
             buildRequest = fetch(url);
+        } else if (method === 'DELETE') {
+            buildRequest = fetch(url, {
+                method,
+                headers: {
+                    'X-Authorization': accessToken,
+                }
+            });
         } else if (accessToken) {
             buildRequest = fetch(url, {
                 method,
@@ -25,8 +32,6 @@ const request = async (method, url, data, accessToken) => {
 
         const response = await buildRequest;
 
-        console.log(response);
-        
         if (response.ok) {
             const result = await response.json();
 

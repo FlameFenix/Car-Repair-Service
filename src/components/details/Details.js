@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../contexts/authContext";
 import * as bookingService from '../../services/bookingService';
@@ -7,6 +7,7 @@ import * as bookingService from '../../services/bookingService';
 import './Details.css'
 
 export const Details = () => {
+    const navigate = useNavigate();
     const itemId = useParams();
     const { user } = useContext(AuthContext);
     const [catalogueItem, setCatalogueItem] = useState({});
@@ -14,10 +15,22 @@ export const Details = () => {
     useEffect(() => {
         bookingService.getOneById(itemId.id).then(res => {
             setCatalogueItem(res);
-            console.log(res);
         })
 
     }, []);
+
+    const deleteHandler = (e) => {
+        e.preventDefault();
+
+        if (catalogueItem._ownerId !== user.userData._id) {
+            return alert('You must be owner in order to delete this article');
+        }
+
+        bookingService.deleteById(catalogueItem._id, undefined, user.userData.accessToken);
+
+        navigate('/Catalogue');
+
+    }
 
     return (
         <div className="details-page">
@@ -30,8 +43,8 @@ export const Details = () => {
             <p>Коментар: {catalogueItem.comment}</p>
             {user.userData._id === catalogueItem._ownerId &&
                 < div className="detailsBtns">
-                    <button className="editBtn">Edit</button>
-                    <button className="deleteBtn">Delete</button>
+                    <button className="editBtn" >Edit</button>
+                    <button className="deleteBtn" onClick={deleteHandler}>Delete</button>
                 </div>
             }
             <Link className="goBackBtn" to="/Catalogue">Go back</Link>

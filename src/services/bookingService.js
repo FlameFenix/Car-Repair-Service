@@ -13,3 +13,7 @@ export const listOfBooking = async () => {
 export const getOneById = async (id) => {
     return await request.get(baseUrl + `/${id}`);
 }
+
+export const deleteById = async(id, data, accessToken) => {
+    return await request.del(baseUrl + `/${id}`, data, accessToken);
+}
