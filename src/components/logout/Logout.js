@@ -9,7 +9,6 @@ export const Logout = () => {
     const { user, onLogout } = useContext(AuthContext);
 
     useEffect(() => {
-        console.log(user.userData.accessToken);
         userService.logoutUser(user.userData.accessToken);
         onLogout();
         navigate('/');

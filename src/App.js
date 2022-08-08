@@ -14,6 +14,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import { Catalogue } from './components/catalogue/Catalogue';
 import { Details } from './components/details/Details';
 import { Logout } from './components/logout/Logout';
+import { Administration } from './components/administration/Administration';
 
 
 import { AuthContext } from './contexts/authContext';
@@ -21,6 +22,7 @@ import { BookingContext } from './contexts/bookingContext';
 
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Messages } from './components/contacts/messages/Messages';
 
 
 
@@ -57,6 +59,8 @@ function App() {
               <Route path="/Catalogue" element={<Catalogue />} />
               <Route path="/Details/:id" element={<Details />} />
               <Route path="/Services/:serviceId" element={<Services />} />
+              <Route path="/Administration" element={<Administration />} />
+              <Route path="/Contacts/Messages" element={<Messages />} />
               <Route path="/Logout" element={<Logout />} />
             </Route>
 

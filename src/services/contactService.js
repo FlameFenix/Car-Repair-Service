@@ -7,6 +7,10 @@ export const listOfMessages = async () => {
     return await request.get(baseUrl);
 }
 
+export const getMessageById = async (id) => {
+    return await request.get(baseUrl + `/${id}`);
+}
+
 export const sendMessage = async (userData) => {
     return await request.post(baseUrl, userData);
 }
