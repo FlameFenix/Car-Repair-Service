@@ -35,7 +35,7 @@ export const Details = () => {
     return (
         <div className="details-page">
 
-            <h2>Детайли за услугата</h2>
+            <h2>Информация за услугата</h2>
             <p>Име: {catalogueItem.fullName}</p>
             <p>Имейл: {catalogueItem.email}</p>
             <p>Вид услуга: {catalogueItem.service}</p>

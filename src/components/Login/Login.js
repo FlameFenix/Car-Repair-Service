@@ -30,6 +30,9 @@ function Login() {
 
         userService.loginUser(values)
             .then(res => {
+                if(res === undefined) {
+                    return alert('Wrong email or password')
+                }
                 onLogin(res)
                 navigate('/')
             })
@@ -60,7 +63,7 @@ function Login() {
                 <div className="container">
                     <label htmlFor="email"><b>Имейл</b></label>
                     <input
-                        type="text"
+                        type="email"
                         placeholder="Въведете имейл"
                         value={values.email}
                         onChange={(e) => onChangeHandler(e)}

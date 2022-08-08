@@ -59,10 +59,10 @@ export const Catalogue = () => {
                         <td className="searchBar" colSpan={'4'}>
 
                             <form action="" className="searchForm" onSubmit={onSubmitSearchHandler}>
-                                <label htmlFor="inputText">Search:</label>
+                                <label htmlFor="inputText">Търсене:</label>
                                 <input class="inputText" id="inputText" name="inputText" type="text" onChange={onChangeSearchValues} />
-                                <label htmlFor="criteria">Criteria:</label>
-                                <select name="criteria" id="criteria" onChange={onChangeSearchValues}>
+                                <label htmlFor="criteria">Филтър:</label>
+                                <select name="criteria" className="criteria" id="criteria" onChange={onChangeSearchValues}>
                                     <option value="">Избери филтър</option>
                                     <option value="fullName">Име</option>
                                     <option value="service">Услуга</option>

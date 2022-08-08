@@ -36,3 +36,23 @@ tr:nth-child(even) {
 .searchForm .inputText {
     padding: 0 20px;
 }
+
+.searchBtn {
+    background-color: #d81324;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.searchBtn:hover {
+    background-color: #fff;
+    border: 1px solid #d81324;
+    color: #d81324;
+}
+
+.criteria {
+    border: 1px solid #d81324;
+    border-radius: 10px;
+    padding: 0px 5px;
+    color: #d81324;
+}
