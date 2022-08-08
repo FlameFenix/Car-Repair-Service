@@ -1,7 +1,25 @@
 # Car-Repair-Service Demo
 
 - <a href="https://car-repair-service.netlify.app/">Car-Repair-Service Demo</a>
+- This is a react app for car service workshop. Here you can find information about the services we provide, who we are and what we can help you. The most interesting functionality of the application is that you can book a service that you want to receive for a given date. 
 
+## Functionality: 
+- There are three users added in the server
+  - acc: flamefenix@abv.bg
+  - acc: peter@abv.bg
+  - acc: john@abv.bg
+  - pass: 123456
+
+ ## Logged-in users:
+  - They have access to the whole app, logged-in user can book for a service after filling the form, edit or delete their own booked services.
+
+ ## Guest users: 
+  - They can browse app like home, about, send messages from contacts and etc, but cant book for a service and cant see list of booked services.
+ 
+ ## Catalogue:
+  - Holds records with all booked services, with names of the owners, type of service, and details about that.
+  - Every owner of the record, can see deitals, edit or delete the booked service.
+  - User which is not owner of the booked service, can't see the buttons 'edit' and 'delete'.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
