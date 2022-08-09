@@ -1,0 +1,36 @@
+.admininstration-menu {
+    border: 1px solid #808080;
+    border-radius: 10px;
+    width: 50%;
+    margin: 50px auto;
+}
+
+.admininstration-menu h2 {
+    margin: 30px;
+}
+
+.list-items {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.list-item {
+    margin-right: 20px;
+    border: 1px solid #d81324;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+
+.list-item:hover {
+    background-color: #d81324;
+    cursor: pointer;
+}
+
+
+.list-item:hover a {
+    color: #fff;
+}

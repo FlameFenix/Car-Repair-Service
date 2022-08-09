@@ -1,18 +1,25 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import { ContactsContext } from "../../../contexts/contactContext";
 import * as contactService from '../../../services/contactService';
+
 import { MessageItem } from "./MessageItem";
 
+import { AuthContext } from "../../../contexts/authContext";
+
+import './Messages.css'
 export const Messages = () => {
 
     const [messages, SetMessages] = useState([]);
+
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         contactService.listOfMessages()
             .then(res => {
                 SetMessages(convertData(res));
             })
-    }, [])
+    }, [SetMessages])
 
     function convertData(data) {
         let result = [];
@@ -23,22 +30,49 @@ export const Messages = () => {
         return result;
     }
 
+    const deleteMessageHandler = (id) => {
+        SetMessages(state => ([
+            ...state.filter(x => x._id !== id)
+        ]));
+    }
+
     return (
         <div>
-            <table>
-                <thead>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Subject</th>
-                    <th>Message</th>
-                </thead>
-                <tbody>
-                    {messages.length !== 0 ?
-                        messages.map(x => <MessageItem key={x._id} {...x} />)
-                    : <tr colSpan={4}>No messages</tr>}
-                </tbody>
-            </table>
+            <ContactsContext.Provider value={{ messages, deleteMessageHandler }}>
+                {user.userData.email === 'flamefenix@abv.bg' &&
+                    <table className="messagesTable">
+                        <thead>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Options</th>
+                        </thead>
+                        <tbody>
+                            {messages.length !== 0 ?
+                                messages.map(x =>
+                                    <MessageItem
+                                        key={x._id}
+                                        {...x}
+                                        id={x._id}
+                                        deleteMessageHandler={deleteMessageHandler}
+                                    />)
+                                : <tr>
+                                    <td className="no-messages" colSpan={'5'}>
+                                        No messages
+                                    </td>
+                                </tr>}
+                        </tbody>
+                    </table>
+                }
 
+                {user.userData.email !== 'flamefenix@abv.bg' &&
+                    <div className="access-denied">
+                        Access denied you should be administrator!
+                    </div>
+                }
+
+            </ContactsContext.Provider>
         </div>
     );
 }

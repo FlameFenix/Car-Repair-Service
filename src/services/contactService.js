@@ -14,3 +14,9 @@ export const getMessageById = async (id) => {
 export const sendMessage = async (userData) => {
     return await request.post(baseUrl, userData);
 }
+
+export const deleteMessage = async (id) => {
+    return await fetch(baseUrl + `/${id}`, {
+        method: 'DELETE',
+    });
+}

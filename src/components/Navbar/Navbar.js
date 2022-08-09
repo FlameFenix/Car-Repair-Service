@@ -18,8 +18,6 @@ function Navbar() {
           <div className="nav-item dropdown">
             <NavLink to="/Pages" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Страници</NavLink>
             <div className="dropdown-menu fade-up m-0">
-              <NavLink to="/Booking" className="dropdown-item">Booking</NavLink>
-              <NavLink to="/Team" className="dropdown-item">Technicians</NavLink>
               <NavLink to="/Register" className="dropdown-item">Регистрация</NavLink>
               <NavLink to="/Login" className="dropdown-item">Вход</NavLink>
               <NavLink to="/Catalogue" className="dropdown-item">Каталог</NavLink>
