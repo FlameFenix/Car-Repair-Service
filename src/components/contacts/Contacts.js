@@ -14,6 +14,7 @@ function Contacts() {
         }
 
         contactService.sendMessage(userData);
+        e.target.reset();
     }
 
     return (
