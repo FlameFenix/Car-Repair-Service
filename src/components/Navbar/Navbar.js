@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../contexts/authContext';
 
 function Navbar() {
+
+  const { user } = useContext(AuthContext);
+
   return (
     <nav className="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
       <NavLink to="/" className="navbar-brand d-flex align-items-center px-4 px-lg-5">
@@ -18,8 +23,12 @@ function Navbar() {
           <div className="nav-item dropdown">
             <NavLink to="/Pages" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Страници</NavLink>
             <div className="dropdown-menu fade-up m-0">
-              <NavLink to="/Register" className="dropdown-item">Регистрация</NavLink>
-              <NavLink to="/Login" className="dropdown-item">Вход</NavLink>
+              {!user.isAuthenticated &&
+                <NavLink to="/Register" className="dropdown-item">Регистрация</NavLink>
+              }
+              {!user.isAuthenticated &&
+                <NavLink to="/Login" className="dropdown-item">Вход</NavLink>
+              }
               <NavLink to="/Catalogue" className="dropdown-item">Каталог</NavLink>
               <NavLink to="/Administration" className="dropdown-item">Администрация</NavLink>
             </div>
