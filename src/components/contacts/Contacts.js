@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import * as contactService from '../../services/contactService';
 
+import './Contacts.css'
+
 function Contacts() {
+
+    const [messageSend, SetMessageSend] = useState(false);
 
     const contactsOnSubmitHandler = (e) => {
         e.preventDefault();
@@ -14,6 +19,7 @@ function Contacts() {
         }
 
         contactService.sendMessage(userData);
+        SetMessageSend(true);
         e.target.reset();
     }
 
@@ -90,8 +96,16 @@ function Contacts() {
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
+
+                    {messageSend &&
+                        <div className='popuptext'>
+                            <span>Вашето съобщение беше изпратено успешно!</span>
+                        </div>
+                    }
+                    
                 </div>
             </div>
         </div>

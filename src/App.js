@@ -23,6 +23,7 @@ import { BookingContext } from './contexts/bookingContext';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Messages } from './components/contacts/messages/Messages';
+import { DetailsEdit } from './components/details/detailsEdit/DetailsEdit';
 
 
 
@@ -58,6 +59,7 @@ function App() {
               <Route path="/Booking" element={<Booking />} />
               <Route path="/Catalogue" element={<Catalogue />} />
               <Route path="/Details/:id" element={<Details />} />
+              <Route path="Details/Edit/:id" element={<DetailsEdit />} />
               <Route path="/Services/:serviceId" element={<Services />} />
               <Route path="/Administration" element={<Administration />} />
               <Route path="/Contacts/Messages" element={<Messages />} />

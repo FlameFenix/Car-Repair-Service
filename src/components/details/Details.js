@@ -8,8 +8,11 @@ import './Details.css'
 
 export const Details = () => {
     const navigate = useNavigate();
+
     const itemId = useParams();
+
     const { user } = useContext(AuthContext);
+
     const [catalogueItem, setCatalogueItem] = useState({});
 
     useEffect(() => {
@@ -42,8 +45,8 @@ export const Details = () => {
             <p>Дата: {catalogueItem.date}</p>
             <p>Коментар: {catalogueItem.comment}</p>
             {user.userData._id === catalogueItem._ownerId &&
-                < div className="detailsBtns">
-                    <button className="editBtn" >Edit</button>
+                <div className="detailsBtns">
+                    <Link to={`/Details/Edit/${itemId.id}`} className="editBtn">Edit</Link>
                     <button className="deleteBtn" onClick={deleteHandler}>Delete</button>
                 </div>
             }
