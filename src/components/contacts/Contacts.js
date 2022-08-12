@@ -1,26 +1,43 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../contexts/authContext';
 import * as contactService from '../../services/contactService';
 
 import './Contacts.css'
 
 function Contacts() {
 
+    const { user } = useContext(AuthContext);
+
+    const [formValues, setFormValues] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const onChangeHandler = (e) => {
+        setFormValues(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
     const [messageSend, SetMessageSend] = useState(false);
 
     const contactsOnSubmitHandler = (e) => {
         e.preventDefault();
-        const { name, email, subject, message } = Object.fromEntries(new FormData(e.target));
 
-        const userData = {
-            name,
-            email,
-            subject,
-            message
-        }
+        contactService.sendMessage({ ...formValues });
 
-        contactService.sendMessage(userData);
         SetMessageSend(true);
-        e.target.reset();
+
+        setFormValues({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        });
+
     }
 
     return (
@@ -69,25 +86,59 @@ function Contacts() {
                                 <div className="row g-3">
                                     <div className="col-md-6">
                                         <div className="form-floating">
-                                            <input type="text" className="form-control" id="name" name="name" placeholder="Your Name" />
+
+                                            <input type="text"
+                                                className="form-control"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Your Name"
+                                                value={formValues.name}
+                                                onChange={onChangeHandler}
+                                            />
+
                                             <label htmlFor="name">Име</label>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="form-floating">
-                                            <input type="email" className="form-control" id="email" name="email" placeholder="Your Email" />
+                                            <input
+                                                type="email"
+                                                className="form-control"
+                                                id="email"
+                                                name="email"
+                                                placeholder="Your Email"
+                                                value={formValues.email}
+                                                onChange={onChangeHandler}
+                                            />
                                             <label htmlFor="email">Имейл</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <input type="text" className="form-control" id="subject" name="subject" placeholder="Subject" />
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                id="subject"
+                                                name="subject"
+                                                placeholder="Subject"
+                                                value={formValues.subject}
+                                                onChange={onChangeHandler}
+                                            />
                                             <label htmlFor="subject">Тема</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
-                                            <textarea className="form-control" placeholder="Leave a message here" id="message" name="message" style={{ height: "100px" }}></textarea>
+                                            <textarea
+                                                className="form-control"
+                                                placeholder="Leave a message here"
+                                                id="message"
+                                                name="message"
+                                                value={formValues.message}
+                                                onChange={onChangeHandler}
+                                                style={{ height: "100px" }}>
+
+                                            </textarea>
                                             <label htmlFor="message">Съобщение</label>
                                         </div>
                                     </div>
@@ -105,7 +156,7 @@ function Contacts() {
                             <span>Вашето съобщение беше изпратено успешно!</span>
                         </div>
                     }
-                    
+
                 </div>
             </div>
         </div>

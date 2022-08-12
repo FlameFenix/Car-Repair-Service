@@ -48,7 +48,7 @@ export const DetailsEdit = () => {
         }
 
         bookingService.editById(itemId.id, catalogueItem, user.userData.accessToken);
-        
+
         navigate('/Catalogue');
     }
 
@@ -147,7 +147,8 @@ export const DetailsEdit = () => {
                             <option value="0">Избери услуга</option>
                             <option value="Диагностика">Диагностика</option>
                             <option value="Обслужване">Обслужване</option>
-                            <option value="3">Service 3</option>
+                            <option value="Обслужване">Трансмисия</option>
+                            <option value="Климатична система">Климатична система</option>
                         </select>
 
                     </div>
