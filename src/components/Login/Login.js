@@ -73,7 +73,7 @@ function Login() {
                     />
 
                     {errors.email &&
-                        < p className="form-error">
+                        <p className="form-error">
                             Имейла трябва да съдържа минимум 6 символа!
                         </p>
                     }

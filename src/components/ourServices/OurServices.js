@@ -1,6 +1,6 @@
-import ServiceItem from "./ServiceItem";
+import  OurServicesItem  from "./OurServicesItem";
 
-function Services() {
+function OurServices() {
     return (
         <div className="container-xxl service py-5">
             <div className="container">
@@ -31,36 +31,35 @@ function Services() {
                     </div>
                     <div className="col-lg-8">
                         <div className="tab-content w-100">
-
-                            <ServiceItem
+                            <OurServicesItem
                                 class="show active"
                                 id="tab-pane-1"
                                 imageUrl="img/service-1.jpg"
                                 title="15 Years Of Experience In Auto Servicing"
                                 description="Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet"
                             />
-                            
-                            <ServiceItem
+
+                            <OurServicesItem
                                 id="tab-pane-2"
                                 imageUrl="img/service-2.jpg"
                                 title="15 Years Of Experience In Auto Servicing"
                                 description="Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet"
                             />
 
-                            <ServiceItem
+                            <OurServicesItem
                                 id="tab-pane-3"
                                 imageUrl="img/service-3.jpg"
                                 title="15 Years Of Experience In Auto Servicing"
                                 description="Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet"
                             />
 
-                            <ServiceItem
+                            <OurServicesItem
                                 id="tab-pane-4"
                                 imageUrl="img/service-4.jpg"
                                 title="15 Years Of Experience In Auto Servicing"
                                 description="Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet"
                             />
-                            
+
                         </div>
                     </div>
                 </div>
@@ -69,4 +68,4 @@ function Services() {
     );
 }
 
-export default Services;
+export default OurServices;

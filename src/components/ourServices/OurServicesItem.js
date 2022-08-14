@@ -6,7 +6,7 @@ function isFirst(id) {
     }
 }
 
-function ServiceItem(props) {
+function OurServicesItem(props) {
     return ( 
     <div className={isFirst(props.id)} id={props.id}>
             <div className="row g-4">
@@ -28,4 +28,4 @@ function ServiceItem(props) {
     );
 }
 
-export default ServiceItem;
+export default OurServicesItem;

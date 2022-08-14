@@ -3,7 +3,7 @@ import About from './components/about/About';
 import Home from './components/home/Home'
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/footer/Footer';
-import Services from './components/services/Services'
+import OurServices from './components/ourServices/OurServices';
 import Topbar from './components/Topbar/Topbar'
 import Booking from './components/booking/Booking'
 import NotFound from './components/NotFound/NotFound'
@@ -15,21 +15,34 @@ import { Catalogue } from './components/catalogue/Catalogue';
 import { Details } from './components/details/Details';
 import { Logout } from './components/logout/Logout';
 import { Administration } from './components/administration/Administration';
+import { Messages } from './components/contacts/messages/Messages';
+import { DetailsEdit } from './components/details/detailsEdit/DetailsEdit';
+import { Bookings } from './components/administration/Bookings/Bookings';
+import { EditItem } from './components/administration/Bookings/BookingItem/EditItem/EditItem';
 
 
 import { AuthContext } from './contexts/authContext';
 import { BookingContext } from './contexts/bookingContext';
 
+import * as bookingService from './services/bookingService';
+
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Messages } from './components/contacts/messages/Messages';
-import { DetailsEdit } from './components/details/detailsEdit/DetailsEdit';
+import { useEffect } from 'react';
 
 
 
 function App() {
 
   const [user, setUser] = useState({});
+
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    bookingService.listOfBooking().then(res => {
+      setBookings(res);
+    })
+  }, [])
 
   const onLogin = (userData) => {
 
@@ -49,7 +62,7 @@ function App() {
     <div className="App">
 
       <AuthContext.Provider value={{ user, onLogin, onLogout }}>
-        <BookingContext.Provider value={{ user }}>
+        <BookingContext.Provider value={{ user, bookings }}>
           <Topbar />
           <Navbar />
 
@@ -60,15 +73,18 @@ function App() {
               <Route path="/Catalogue" element={<Catalogue />} />
               <Route path="/Details/:id" element={<Details />} />
               <Route path="/Details/Edit/:id" element={<DetailsEdit />} />
-              <Route path="/Services/:serviceId" element={<Services />} />
-              <Route path="/Administration" element={<Administration />} />
-              <Route path="/Contacts/Messages" element={<Messages />} />
+              <Route path="/Services/:serviceId" element={<OurServices />} />
               <Route path="/Logout" element={<Logout />} />
+              <Route path="/Administration" element={<Administration />} />
+              <Route path="/Administration/Contacts/Messages" element={<Messages />} />
+              <Route path="/Administration/Bookings" element={<Bookings />} />
+              <Route path="/Administration/Bookings/EditItem/:id" element={<EditItem />} />
+              <Route path="/Administration/Bookings/DeleteItem/:id" element={<Bookings />} />
             </Route>
 
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Services" element={<Services />} />
+            <Route path="/Services" element={<OurServices />} />
             <Route path="/Contacts" element={<Contacts />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Login" element={<Login />} />

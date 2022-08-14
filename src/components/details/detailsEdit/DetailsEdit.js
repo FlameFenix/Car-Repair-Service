@@ -147,7 +147,8 @@ export const DetailsEdit = () => {
                             <option value="0">Избери услуга</option>
                             <option value="Диагностика">Диагностика</option>
                             <option value="Обслужване">Обслужване</option>
-                            <option value="Обслужване">Трансмисия</option>
+                            <option value="Трансмисия">Трансмисия</option>
+                            <option value="Ходова част">Ходова част</option>
                             <option value="Климатична система">Климатична система</option>
                         </select>
 
