@@ -10,10 +10,12 @@ function Contacts() {
 
     const [formValues, setFormValues] = useState({
         name: '',
-        email: '',
+        email: user.isAuthenticated ? user.userData.email : '',
         subject: '',
         message: ''
     });
+
+    const [errors, setErrors] = useState('');
 
     const onChangeHandler = (e) => {
         setFormValues(state => ({
@@ -27,17 +29,44 @@ function Contacts() {
     const contactsOnSubmitHandler = (e) => {
         e.preventDefault();
 
+        const { name, email, subject, message } = { ...formValues };
+
+        if (errors.name ||
+            errors.email ||
+            errors.subject ||
+            errors.message ||
+            !name ||
+            !email ||
+            !subject ||
+            !message) {
+            return alert('Трябва да попълните всички полета')
+        }
+
         contactService.sendMessage({ ...formValues });
 
         SetMessageSend(true);
 
         setFormValues({
             name: '',
-            email: '',
+            email: user.isAuthenticated ? user.userData.email : '',
             subject: '',
             message: ''
         });
 
+    }
+
+    const dataValidateHandler = (e, bound) => {
+        if (e.target.value.length < bound) {
+            setErrors(state => ({
+                ...state,
+                [e.target.name]: true
+            }))
+        } else {
+            setErrors(state => ({
+                ...state,
+                [e.target.name]: false
+            }))
+        }
     }
 
     return (
@@ -94,11 +123,20 @@ function Contacts() {
                                                 placeholder="Your Name"
                                                 value={formValues.name}
                                                 onChange={onChangeHandler}
+                                                onBlur={(e) => dataValidateHandler(e, 3)}
                                             />
 
                                             <label htmlFor="name">Име</label>
                                         </div>
+                                        {errors.name &&
+                                            <p className="form-error">
+                                                Името трябва да съдържа минимум 3 символа!
+                                            </p>
+                                        }
+
                                     </div>
+
+
                                     <div className="col-md-6">
                                         <div className="form-floating">
                                             <input
@@ -109,9 +147,15 @@ function Contacts() {
                                                 placeholder="Your Email"
                                                 value={formValues.email}
                                                 onChange={onChangeHandler}
+                                                onBlur={(e) => dataValidateHandler(e, 6)}
                                             />
                                             <label htmlFor="email">Имейл</label>
                                         </div>
+                                        {errors.email &&
+                                            <p className="form-error">
+                                                Имейла трябва да съдържа минимум 6 символа!
+                                            </p>
+                                        }
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
@@ -123,9 +167,15 @@ function Contacts() {
                                                 placeholder="Subject"
                                                 value={formValues.subject}
                                                 onChange={onChangeHandler}
+                                                onBlur={(e) => dataValidateHandler(e, 4)}
                                             />
                                             <label htmlFor="subject">Тема</label>
                                         </div>
+                                        {errors.subject &&
+                                            <p className="form-error">
+                                                Темата трябва да съдържа минимум 4 символа!
+                                            </p>
+                                        }
                                     </div>
                                     <div className="col-12">
                                         <div className="form-floating">
@@ -136,11 +186,17 @@ function Contacts() {
                                                 name="message"
                                                 value={formValues.message}
                                                 onChange={onChangeHandler}
+                                                onBlur={(e) => dataValidateHandler(e, 10)}
                                                 style={{ height: "100px" }}>
 
                                             </textarea>
                                             <label htmlFor="message">Съобщение</label>
                                         </div>
+                                        {errors.message &&
+                                            <p className="form-error">
+                                                Съобщението трябва да съдържа минимум 10 символа!
+                                            </p>
+                                        }
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-primary w-100 py-3" type="submit">Изпрати съобщение</button>
