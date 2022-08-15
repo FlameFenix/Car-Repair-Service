@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
-export const BookingItem = ({ _id, fullName, email, comment, service, date }) => {
+export const BookingItem = ({ _id, fullName, email, comment, service, date, editAction }) => {
+    
     return (
         <tr className="user-information">
             <th className="user-name">{fullName}</th>
@@ -9,7 +10,7 @@ export const BookingItem = ({ _id, fullName, email, comment, service, date }) =>
             <th className="service"> {service}</th>
             <th className="date">{date}</th>
             <th className="button">
-                <Link className="editBtn" to={`/Administration/Bookings/EditItem/${_id}`}>Промяна</Link>
+                <button className="editBtn" onClick={(e) => editAction(e, _id)}>Промяна</button>
                 <Link className="deleteBtn" to={`/Administration/Bookings/DeleteItem/${_id}`}>Премахване</Link>
             </th>
         </tr>

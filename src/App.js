@@ -18,7 +18,6 @@ import { Administration } from './components/administration/Administration';
 import { Messages } from './components/contacts/messages/Messages';
 import { DetailsEdit } from './components/details/detailsEdit/DetailsEdit';
 import { Bookings } from './components/administration/Bookings/Bookings';
-import { EditItem } from './components/administration/Bookings/BookingItem/EditItem/EditItem';
 
 
 import { AuthContext } from './contexts/authContext';
@@ -39,10 +38,18 @@ function App() {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    bookingService.listOfBooking().then(res => {
-      setBookings(res);
-    })
-  }, [])
+    bookingService.listOfBooking()
+      .then(res => {
+        setBookings(res);
+      })
+  }, [setBookings])
+
+  const onEditHandler = (bookingItem) => {
+    setBookings(state => ([
+      ...state.filter(x => x._id !== bookingItem._id),
+      bookingItem
+    ]))
+  }
 
   const onLogin = (userData) => {
 
@@ -62,7 +69,7 @@ function App() {
     <div className="App">
 
       <AuthContext.Provider value={{ user, onLogin, onLogout }}>
-        <BookingContext.Provider value={{ user, bookings }}>
+        <BookingContext.Provider value={{ user, bookings, onEditHandler }}>
           <Topbar />
           <Navbar />
 
@@ -78,7 +85,6 @@ function App() {
               <Route path="/Administration" element={<Administration />} />
               <Route path="/Administration/Contacts/Messages" element={<Messages />} />
               <Route path="/Administration/Bookings" element={<Bookings />} />
-              <Route path="/Administration/Bookings/EditItem/:id" element={<EditItem />} />
               <Route path="/Administration/Bookings/DeleteItem/:id" element={<Bookings />} />
             </Route>
 
