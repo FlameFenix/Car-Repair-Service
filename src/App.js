@@ -42,7 +42,7 @@ function App() {
       .then(res => {
         setBookings(res);
       })
-  }, [setBookings])
+  }, [])
 
   const onEditHandler = (bookingItem) => {
     setBookings(state => ([

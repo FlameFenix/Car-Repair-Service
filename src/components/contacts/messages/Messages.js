@@ -42,11 +42,13 @@ export const Messages = () => {
                 {user.userData.email === 'flamefenix@abv.bg' &&
                     <table className="messagesTable">
                         <thead>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Subject</th>
-                            <th>Message</th>
-                            <th>Options</th>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Options</th>
+                            </tr>
                         </thead>
                         <tbody>
                             {messages.length !== 0 ?
@@ -65,13 +67,7 @@ export const Messages = () => {
                         </tbody>
                     </table>
                 }
-
-                {user.userData.email !== 'flamefenix@abv.bg' &&
-                    <div className="access-denied">
-                        Access denied you should be administrator!
-                    </div>
-                }
-
+                
             </ContactsContext.Provider>
         </div>
     );

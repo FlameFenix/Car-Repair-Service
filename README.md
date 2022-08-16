@@ -20,6 +20,11 @@
   - Holds records with all booked services, with names of the owners, type of service, and details about that.
   - Every owner of the record, can see deitals, edit or delete the booked service.
   - User which is not owner of the booked service, can't see the buttons 'edit' and 'delete'.
+
+ ## Administration menu: 
+  - Accessable only by flamefenix@abv.bg
+  - Can read/delete messages (sent from Contacts form)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
