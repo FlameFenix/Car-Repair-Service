@@ -33,9 +33,6 @@ export const Administration = () => {
 
                     {
                         user.userData.email !== 'flamefenix@abv.bg' &&
-                        // <div className="access-denied">
-                        //     Access denied you should be administrator!
-                        // </div>
                         <p className="access-denied"> Access denied you should be administrator! </p>
                     }
                 </div >

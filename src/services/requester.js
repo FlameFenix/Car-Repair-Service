@@ -38,8 +38,6 @@ const request = async (method, url, data, accessToken) => {
             return result;
         }
 
-
-
     } catch (error) {
         console.log(error);
     }

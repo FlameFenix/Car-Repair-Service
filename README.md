@@ -22,7 +22,7 @@
   - User which is not owner of the booked service, can't see the buttons 'edit' and 'delete'.
 
  ## Administration menu: 
-  - Accessable only by flamefenix@abv.bg
+  - Accessible only by flamefenix@abv.bg (kind of admin account)
   - Can read/delete messages (sent from Contacts form)
 
 # Getting Started with Create React App

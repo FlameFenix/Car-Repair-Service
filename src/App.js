@@ -51,6 +51,12 @@ function App() {
     ]))
   }
 
+  const onDeleteHandler = (id) => {
+    setBookings(state => ([
+      ...state.filter(x => x._id !== id)
+    ]))
+  }
+
   const onLogin = (userData) => {
 
     setUser({ userData, isAuthenticated: true })
@@ -69,7 +75,7 @@ function App() {
     <div className="App">
 
       <AuthContext.Provider value={{ user, onLogin, onLogout }}>
-        <BookingContext.Provider value={{ user, bookings, onEditHandler }}>
+        <BookingContext.Provider value={{ user, bookings, onEditHandler, onDeleteHandler }}>
           <Topbar />
           <Navbar />
 

@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router';
 
 import * as bookingService from '../../../../../services/bookingService';
 
