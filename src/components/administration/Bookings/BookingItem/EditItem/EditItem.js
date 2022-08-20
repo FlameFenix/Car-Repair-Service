@@ -104,6 +104,7 @@ export const EditItem = ({ _id, fullName, email, service, date, comment, closeTa
                         </div>
                         <div className="col-12">
                             <button className="btn btn-secondary w-100 py-3" type="submit">Промени</button>
+                            <button className="btn btn-secondary w-100 py-3" onClick={closeTab}>Отказ</button>
                         </div>
                     </div>
                 </form>

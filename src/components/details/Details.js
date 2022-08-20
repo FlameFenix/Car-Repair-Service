@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../contexts/authContext";
+import { BookingContext } from "../../contexts/bookingContext";
 import * as bookingService from '../../services/bookingService';
 
 import './Details.css'
@@ -12,6 +13,8 @@ export const Details = () => {
     const itemId = useParams();
 
     const { user } = useContext(AuthContext);
+
+    const { onDeleteHandler } = useContext(BookingContext);
 
     const [catalogueItem, setCatalogueItem] = useState({});
 
@@ -30,7 +33,7 @@ export const Details = () => {
         }
 
         bookingService.deleteById(catalogueItem._id, undefined, user.userData.accessToken);
-
+        onDeleteHandler(catalogueItem._id);
         navigate('/Catalogue');
 
     }

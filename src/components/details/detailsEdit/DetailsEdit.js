@@ -7,12 +7,15 @@ import * as bookingService from '../../../services/bookingService';
 import './DetailsEdit.css';
 
 import { AuthContext } from '../../../contexts/authContext';
+import { BookingContext } from '../../../contexts/bookingContext';
 
 export const DetailsEdit = () => {
 
     const itemId = useParams();
 
     const { user } = useContext(AuthContext);
+
+    const { onEditHandler } = useContext(BookingContext);
 
     const navigate = useNavigate();
 
@@ -48,7 +51,7 @@ export const DetailsEdit = () => {
         }
 
         bookingService.editById(itemId.id, catalogueItem, user.userData.accessToken);
-
+        onEditHandler(catalogueItem);
         navigate('/Catalogue');
     }
 
@@ -94,6 +97,10 @@ export const DetailsEdit = () => {
         }
     }
 
+    const onCancelHandler = (e, id) => {
+        e.preventDefault();
+        return navigate(`/Details/${id}`)
+    }
 
     return (
         <div className="editForm">
@@ -177,6 +184,7 @@ export const DetailsEdit = () => {
                     </div>
                     <div className="col-12">
                         <button className="btn btn-secondary w-100 py-3" type="submit">Промени</button>
+                        <button className="btn btn-secondary w-100 py-3" onClick={(e) => onCancelHandler(e, catalogueItem._id)}> Отказ </button>
                     </div>
                 </div>
             </form>
